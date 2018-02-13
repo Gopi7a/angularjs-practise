@@ -7,8 +7,7 @@ myApp.service('AppService',['$http','$q',
                     .then(function(res){ 
                         var stu = res.data.map(function(item){
                             item.sen = item.age<10?"senr":"junr"; 
-                            console.log(item.sen);              
-                            return item;   
+                             return item;   
                         }) ;       
                         defer.resolve(stu);
                
@@ -20,7 +19,7 @@ myApp.service('AppService',['$http','$q',
             var defer = $q.defer();
             setTimeout(function(){
                 defer.resolve('hello');
-            },2000);
+            },1000);
             return defer.promise;
         }
     }

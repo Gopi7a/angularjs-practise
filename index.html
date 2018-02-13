@@ -25,7 +25,7 @@
                     <tbody>
                         <tr ng-repeat="stu in students">
                             <td> {{$index+1}}</td>
-                            <td>{{stu.name}}</td>
+                            <td>{{stu.name | customName:'helloo'}}</td>
                             <td>{{stu.age}}</td>
                             <td>{{stu.sen}}</td>
                             <td><button ng-click="viewDetails(stu)">View</button></td>
@@ -47,5 +47,6 @@
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <script src="app.service.js"></script>
+    <script src="app.filter.js"></script>
 </body>
 </html>
