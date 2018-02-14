@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body><student-details my-title="my Title Showing"></student-details>
+    <ui-view></ui-view>
     <div ng-controller="myCtrl">
-        {{myVal}}     
+        {{myVal}}  
+         
         <input type="text" ng-model="myVal">  
         <button ng-click="onClick('jack')">Hit Me</button> 
 
+<student-details current-student="myVals" ></student-details>
         <table>
                 <thead>
                     <tr>
@@ -33,11 +36,11 @@
                     </tbody>
             </table>
 
-            <div>
+            <!-- <div>
                 <h2>Student Details</h2>
                 <p>{{myVals.name}}</p>
                 <p>{{myVals.age}}</p>
-            </div>
+            </div> -->
 
             <button ng-click="onBtnClick($event)">button1</button>
             <button ng-click="onBtnClick($event)">button2</button>
@@ -45,8 +48,10 @@
      
     
     <script src="angular.js"></script>
+    <script src="angular-ui-router.js"></script>
     <script src="app.js"></script>
     <script src="app.service.js"></script>
     <script src="app.filter.js"></script>
+    <script src="app.component.js"></script>
 </body>
 </html>

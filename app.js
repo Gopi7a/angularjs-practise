@@ -1,4 +1,29 @@
-var myApp = angular.module('myapp',[]);
+var myApp = angular.module('myapp',['ui.router']);
+myApp.config(['$stateProvider','$urlRouterProvider',
+    function($stateProvider,$urlRouterProvider){
+        $stateProvider.state({
+            name:'home',
+            url:'/home',
+            template: '<div>This is the index page</div>'
+        });
+
+        $stateProvider.state({
+            name:'about',
+            url:'/about',
+            template: '<div>This is the about page</div>'
+        });
+
+        
+        $urlRouterProvider.otherwise('/home');
+        
+        // $routeProvider.when("/page1",{
+        //     templateUrl: "page1.html"
+        // });
+
+}]);
+
+
+
 myApp.controller('myCtrl',['$scope','AppService',
    function($scope,AppService){
     $scope.myVal = "Hello";
